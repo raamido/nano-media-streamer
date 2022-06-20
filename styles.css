@@ -1,0 +1,40 @@
+.player {
+  width: 750px;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  align-items: flex-end;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    hsla(0, 0%, 0%, 0.7) 32%,
+    hsla(0, 0%, 0%, 0)
+  );
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+video {
+  display: block;
+  width: 100%;
+}
+
+.controls {
+  width: 100%;
+  padding: 1rem;
+}
+
+.other-controls {
+  display: flex;
+  align-items: center;
+}
