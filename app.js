@@ -2,10 +2,21 @@ const video = document.querySelector("video");
 const playButton = document.querySelector(".play-or-pause");
 const playButtonIcon = playButton.querySelector("img");
 const progressBar = document.querySelector(".progress-bar");
+const videoDuration = document.querySelector(".duration");
+const currentTime = document.querySelector(".current-time");
 
 playButton.addEventListener("click", () => play());
+
+video.addEventListener("canplay", () => {
+  const minutes = (video.duration / 60).toFixed();
+  const seconds = video.duration.toFixed();
+  videoDuration.textContent = `${minutes}:${seconds}`;
+});
+
 video.addEventListener("timeupdate", () => {
   const progress = ((video.currentTime / video.duration) * 100).toFixed();
+  const currentMinute = (video.currentTime / 60).toFixed();
+  const currentSecond = video.currentTime.toFixed();
   progressBar.value = progress;
   progressBar.style.background =
     "linear-gradient(to right, #e63946 0%, #e63946 " +
@@ -13,6 +24,7 @@ video.addEventListener("timeupdate", () => {
     "%, #fff " +
     progress +
     "%, white 100%)";
+  currentTime.textContent = `${currentMinute}:${currentSecond}`;
 });
 video.addEventListener("ended", () => {
   video.classList.add("paused");
