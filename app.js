@@ -31,6 +31,13 @@ video.addEventListener("ended", () => {
   playButtonIcon.src = "/assets/play.svg";
 });
 
+progressBar.addEventListener("input", (e) => {
+  video.currentTime = (
+    (parseInt(e.target.value) / 100) *
+    video.duration
+  ).toFixed(1);
+});
+
 const play = () => {
   if (video.paused) {
     playButtonIcon.src = "/assets/pause.svg";
