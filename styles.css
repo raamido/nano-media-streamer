@@ -44,6 +44,12 @@ video {
 .other-controls {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.other-controls > div {
+  display: flex;
+  align-items: center;
 }
 
 input[type="range"] {
@@ -69,11 +75,13 @@ input[type="range"]::-webkit-slider-thumb {
   background: whitesmoke;
 }
 
-.play-or-pause {
-  transform: translateX(-1rem);
+img {
+  cursor: pointer;
+}
+
+.control-button {
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 .time-display {
