@@ -31,7 +31,7 @@ video.addEventListener("timeupdate", () => {
 });
 video.addEventListener("ended", () => {
   video.classList.add("paused");
-  playButtonIcon.src = "/assets/play.svg";
+  playButtonIcon.src = "assets/play.svg";
 });
 
 progressBar.addEventListener("input", (e) => {
@@ -61,11 +61,11 @@ pictureInPicture.addEventListener("click", () => {
 
 const play = () => {
   if (video.paused) {
-    playButtonIcon.src = "/assets/pause.svg";
+    playButtonIcon.src = "assets/pause.svg";
     video.classList.remove("paused");
     video.play();
   } else {
-    playButtonIcon.src = "/assets/play.svg";
+    playButtonIcon.src = "assets/play.svg";
     video.classList.add("paused");
     video.pause();
   }
