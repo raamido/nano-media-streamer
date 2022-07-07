@@ -6,6 +6,7 @@ const progressBar = document.querySelector(".progress-bar");
 const videoDuration = document.querySelector(".duration");
 const currentTime = document.querySelector(".current-time");
 const toggleFullscreen = document.querySelector(".fullscreen");
+const pictureInPicture = document.querySelector(".picture_in_picture");
 
 playButton.addEventListener("click", () => play());
 
@@ -45,6 +46,16 @@ toggleFullscreen.addEventListener("click", () => {
     player.requestFullscreen();
   } else {
     document.exitFullscreen();
+  }
+});
+
+pictureInPicture.addEventListener("click", () => {
+  if (document.pictureInPictureElement) {
+    document.exitPictureInPicture();
+  } else {
+    if (document.pictureInPictureEnabled) {
+      video.requestPictureInPicture();
+    }
   }
 });
 
